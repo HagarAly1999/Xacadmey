@@ -1,0 +1,36 @@
+﻿@model List<Trainee>
+@{
+    ViewData["Title"] = "ReadTraineeslist";
+}
+
+<h1>ReadTraineeslist</h1>
+
+
+    <a href="/Trainee/CreateNewTrainee" class="btn btn-primary">Add</a>
+    @* <a asp-controller="Trainee" asp-action="New">Add New Trainee</a> *@
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Image</th>
+            <th>Department</th>
+            <th>Grade</th>
+        </tr>
+        @foreach (var i in Model)
+        {
+
+
+            <tr>
+                <td>@i.Name</td>
+                <td>@i.Address</td>
+                <td>@i.Image</td>
+                <td>@i.Department.Name</td>
+                <td>@i.Grade</td>
+                <td ><a href="/Trainee/EditTrainee/@i.Id"class="colored-anchor green-bg">Edit</a>
+                    <a href="/Trainee/DeleteTrainee/@i.Id" class="colored-anchor red-bg">Delete</a>
+                </td>
+            </tr>
+        }
+
+    </table>

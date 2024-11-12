@@ -1,0 +1,35 @@
+﻿@model Xacadmey.Models.Course
+<form action="/Course/SaveEdit/@Model.Id"method="get">
+
+    <div class="mb-3">
+        <label for="Name" class="form-label">Name</label>
+        <input type="text" class="form-control" name="Name"value="@Model.Name">
+
+    </div>
+    <div class="mb-3">
+        <label for="Mindegree" class="form-label">Min Degree</label>
+        <input type="number" class="form-control" name="Mindegree"value="@Model.Mindegree">
+    </div>
+    <div class="mb-3">
+        <label for="Degree" class="form-label">Full Degree</label>
+        <input type="number" class="form-control" name="Degree"value="@Model.Degree">
+    </div>
+    <div class="mb-3">
+        <label for="DepartmentId" class="form-label">Department</label>
+       @*  <input type="number" class="form-control" name="DepartmentId"value="@Model.DepartmentId"> *@
+        <select name="DepartmentId"class="form-control">
+
+            @foreach (var x in ViewBag.depts)
+            {
+
+                if(x.Id==Model.DepartmentId){
+                <option value="@x.Id"selected="selected">@x.Name</option>
+                }
+            }
+        </select>
+
+
+    </div>
+    <input type="submit"value="save" />
+
+</form>

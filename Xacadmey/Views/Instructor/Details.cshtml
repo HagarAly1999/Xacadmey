@@ -1,0 +1,17 @@
+﻿@model Instructor
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>@Model.Name</h1>
+<h2>@ViewData["msg"].ToString()</h2>
+
+<select class="form-control">
+    @foreach (var item in (List<string>)ViewData["bran"])
+    {
+        <option>
+            @item
+        </option>
+    }
+</select>
+

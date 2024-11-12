@@ -1,0 +1,37 @@
+﻿
+@model InstructorWithBranchListViewModel
+@{
+    ViewData["Title"] = "DetailsWithVM";
+}
+<!--
+    <div style="background-color:@Model.color;height:100px">
+
+
+@Model.InsName;
+@Model.branches.FirstOrDefault();
+<select class="form-control">
+@foreach (var item in Model.branches)
+{
+            <option>
+        @item
+            </option>
+}
+</select>
+</div>
+
+@Model.InsName;
+@Model.branches.FirstOrDefault();
+-->
+
+
+<select class="form-control">
+    @foreach (var item in Model.branches)
+    {
+        <option>
+            @item
+        </option>
+    }
+</select>
+@Model.DeptManagerName;
+@Model.temp;
+

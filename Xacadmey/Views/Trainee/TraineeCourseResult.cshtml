@@ -1,0 +1,22 @@
+﻿@model List<TraineeGetbyidViewModel>;
+
+<table class="table table-bordered table-hover">
+    <tr>
+        <th>Trainee Name</th>
+        <th>Course Name</th>
+        <th>Degree</th>
+        <th>Status</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.TraineeName</td>
+            <td>@item.CourseName</td>
+            <td>@item.TraineeDegree</td>
+            <td style="background-color:@item.Color">@item.Status</td>
+
+        </tr>
+    }
+
+</table>
+

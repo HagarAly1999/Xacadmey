@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "ReadCoursesList";
+}
+
+<h1>ReadCoursesList</h1>
+@model List<Course>
+<a href="/Course/CreateNewCourse" class="btn btn-primary">Add</a>
+<table class="table table-bordered table-hover">
+    <tr>
+        <th> CourseName</th>
+        <th>Min Degree</th>
+        <th>Full Degree</th>
+        <th>Hour</th>
+        <th>Department</th>
+        
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Mindegree</td>
+            <td>@item.Degree</td>
+            <td>@item.Hours</td>
+            <td>@item.Department.Name</td>
+          
+            
+            <td>
+                <a href="/Course/EditCourse/@item.Id" class="colored-anchor green-bg">Edit</a>
+                <a href="/Course/DeleteCourse/@item.Id" class="colored-anchor red-bg">Delete</a>
+
+            </td>
+
+        </tr>
+    }
+
+</table>
+
+
